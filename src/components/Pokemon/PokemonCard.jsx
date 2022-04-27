@@ -1,7 +1,7 @@
-export default function PokemonCard({ name, type }) {
+export default function PokemonCard({ pokemon, type_1 }) {
   return (
     <div>
-      
+
     </div>
   )
 };
