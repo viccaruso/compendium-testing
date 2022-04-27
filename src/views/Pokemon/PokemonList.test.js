@@ -5,24 +5,19 @@ import PokemonList from './PokemonList';
 
 describe('PokemonList', () => {
   it('should render a list of pokemon cards to screen and then filter down to one', async () => {
-    
     render(
       <PokemonList />
-    )
+    );
 
     await screen.findByText('Geodude');
 
     const filter = screen.getByPlaceholderText('Filter pokemon');
-
     userEvent.type(filter, 'arb');
-
-    screen.debug();
 
     return waitFor(() => {
       const result = screen.getAllByRole('heading');
-      expect(result.length).toEqual(1);
-      expect(result[0].textContent).toEqual('Arbok')
-    })
-
+      expect(result.length).toEqual(2);
+      expect(result[1].textContent).toEqual('Arbok');
+    });
   });
 });
