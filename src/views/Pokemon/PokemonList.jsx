@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
 import { fetchAllPokemon } from '../../services/api';
+import PokemonCard from '../../components/Pokemon/PokemonCard';
 
 export default function PokemonList() {
-  const [pokemon, setPokemon] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
    async function fetch() {
      const data = await fetchAllPokemon();
-     setPokemon(data);
+     setPokemons(data);
    };
    fetch();
 
   }, [])
   
-  console.log(pokemon);
   return (
-  <p>hello</p>
+    <div className='pokemon-list'>
+      { pokemons.map(pokemon => <PokemonCard key={pokemon._id} pokemon={pokemon} />) } 
+    </div>
   );
 };
