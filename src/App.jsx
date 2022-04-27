@@ -1,4 +1,4 @@
-import PokemonList from './views/Pokemon/List';
+import PokemonList from './views/Pokemon/PokemonList';
 
 export default function App() {
   return (
