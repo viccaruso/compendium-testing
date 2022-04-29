@@ -1,4 +1,4 @@
-;import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { capitalizeFirst } from '../../utils/capitalize';
 import userEvent from '@testing-library/user-event';
 import PokemonList from './PokemonList';
